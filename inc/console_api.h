@@ -107,6 +107,8 @@ size_t console_menu(char *prompt, menu_ent *entries, size_t entries_count);
 
 /* Styled output */
 
+void console_color_foreground_reset();
+void console_color_background_reset();
 void console_color_foreground(int r, int g, int b);
 void console_color_background(int r, int g, int b);
 void console_color_switch(int flag); //switch foreground and background colors

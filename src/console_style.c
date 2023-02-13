@@ -19,6 +19,18 @@
 #define TERM_GFX_NBLINK     (25) // Not supported on Windows
 #define TERM_GFX_NREV_VID   (27)
 
+#define TERM_GFX_DEF_FG (39) // sets back default foreground color
+#define TERM_GFX_DEF_BG (49) // sets back default background color
+
+void console_color_foreground_reset()
+{
+    ENABLE_TERM_GFX_ATTR(TERM_GFX_DEF_FG);
+}
+void console_color_background_reset()
+{
+    ENABLE_TERM_GFX_ATTR(TERM_GFX_DEF_BG);
+}
+
 
 void console_color_foreground(int r, int g, int b)
 {

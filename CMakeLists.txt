@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.12)
 
 project(ConsoleAPI)
 
-set(ConsoleAPI_Target "cn_api" PARENT_SCOPE)
+set(internal_ConsoleAPI_Target "cn_api")
+set(ConsoleAPI_Target ${internal_ConsoleAPI_Target} PARENT_SCOPE)
 
 file(
     GLOB_RECURSE
@@ -16,10 +17,10 @@ file(
 )
 
 add_library(
-    ${ConsoleAPI_Target}
+    ${internal_ConsoleAPI_Target}
     STATIC
-    ${CN_API_SRC}
-    ${CN_API_INC}
+    ${CNAPI_SRC}
+    ${CNAPI_INC}
 )
 
-target_include_directories(${ConsoleAPI_Target} PUBLIC)
+target_include_directories(${internal_ConsoleAPI_Target} PUBLIC "inc/")
